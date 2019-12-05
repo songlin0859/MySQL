@@ -146,6 +146,38 @@
       ```
       查询正在使用的数据库名称
       select database();
+## DDL操作表
+    1. C(Create)创建
+      create table if not exists 表名（
+         列名1 数据类型1，
+         列名2 数据类型2，
+         ...
+         列名n 数据类型n
+          ）；
+     int double date time datatime timestamp
+    2. R(Retrieve)查询
+       * 查询某个数据库中所有的表 show tables；
+       ```
+      mysql> show tables;
+      +-----------------+
+      | Tables_in_db_sl |
+      +-----------------+
+      | tb_c            |
+      | tb_sl           |
+      +-----------------+
+      2 rows in set (0.03 sec)
+       ```
+      * 查询表结构 desc 表名；
+    3. U(Update)修改
+      修改表名 alter table 表名 rename to 新表名；
+      修改表的字符画 alter table 表名 character set 字符集名称;
+      添加一列 alter table 表名 add 列名 列数据类型；
+      修改列名称、类型 alter table 表名 change 列名 新列名 新数据类型；
+                      alter table 表名 modify 列名 新数据类型;
+      删除列 alter table 表名 drop 列名；
+    4. D（Delete）删除
+       delete table 表名；
+       delete table if exists 表名；
 ## 数据库的基本概念
   1. 数据库的英文单词：DataBase 简称DB
   2. 什么是数据库
@@ -155,3 +187,43 @@
     2. 方便存储和管理
     3. 使用了统一的方式操作数据库 --SQL
   4. 常见的数据库软件 MySQL Oracle
+## 图形化界面工具 SQLyog\Navicat
+## DML
+  1. 添加数据
+    insert into 表名（列名1 ,... 列名n） values (值1,...值n)；
+    注意：列名和值要一一对应；如果列名后不定义列名，怎默认给所有的列添加值；除了数字类型，其他类型需要使用引号引起来；
+    INSERT INTO
+    tb1(`name`,age)
+    VALUES
+    ('chen',28),
+    ('luo',24);
+  2. 删除数据
+    delete from 表名 [where 条件]；
+    注意：如果不加where条件，则删除表中所有记录；
+    TRUNCATE 表名； -- 删除所有数据，然后创建一个一模一样表结构的表；
+  3. 修改数据
+    update 表名 set 列名1=值1，列名2=值2 ,... [where 条件]；
+
+## DQL 查询表中的记录
+  select * from 表名；
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
