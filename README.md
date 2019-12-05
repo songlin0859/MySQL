@@ -205,7 +205,47 @@
     update 表名 set 列名1=值1，列名2=值2 ,... [where 条件]；
 
 ## DQL 查询表中的记录
-  select * from 表名；
+    select 字段名 from 表名
+    where
+      条件列表
+    group by 
+      分组字段
+    having
+      分组字后的条件
+    order by 
+      排序字段
+    limit 
+      分页；
+  1.基础查询
+    1. 多个字段查询
+      select 字段1,字段2...字段n from 表名；
+      如果查询所有字段 可以使用*替代所有字段列表
+    2. 去除重复
+      distinct
+    3. 计算列
+      1. 一般可以用四则运算计算一些列的值；
+      2. if null(表达式1，表达式1为null的默认值)；
+        注：null参与的的运算，结算结果都为null；
+    4. 起别名
+      as ， as也可以省略
+  2. 条件查询
+    1. where字句后加条件；
+    2. 运算符 
+      * > ,< ,>=,<= ,=, <>/!=
+      * between ... and
+      * in 
+      * like [_ %] 模糊查询
+        * 占位符
+          * _ ：单个任意字符
+          * % ：多个任意字符；
+      * IS [NOT] NULL
+      * and &&
+      * or ||
+      * not !
+      
+    
+   
+  
 
 
 
