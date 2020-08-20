@@ -8,3 +8,5 @@ drop database if exists mysql_test;
 use mysql_test;
 #数据库重命名
 --
+#查看创建数据库语句
+show create database mysql_test;
